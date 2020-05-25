@@ -1,1 +1,32 @@
-output from Kubernetes
+Prediction window
+--------------------
+Port: 8000
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100   260  100    48  100   212    190    841 --:--:-- --:--:-- --:--:--  1040{
+  "prediction": [
+    20.35373177134412
+  ]
+}
+
+Main Output
+--------------
+ * Serving Flask app "app" (lazy loading)
+ * Environment: production
+   WARNING: Do not use the development server in a production environment.
+   Use a production WSGI server instead.
+ * Debug mode: on
+ * Running on http://0.0.0.0:80/ (Press CTRL+C to quit)
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 870-962-181
+[2020-05-25 15:48:21,662] INFO in app: JSON payload:
+{'CHAS': {'0': 0}, 'RM': {'0': 6.575}, 'TAX': {'0': 296.0}, 'PTRATIO': {'0': 15.3}, 'B': {'0': 396.9}, 'LSTAT': {'0': 4.98}}
+[2020-05-25 15:48:21,745] INFO in app: Inference payload DataFrame:
+   CHAS     RM    TAX  PTRATIO      B  LSTAT
+0     0  6.575  296.0     15.3  396.9   4.98
+[2020-05-25 15:48:21,768] INFO in app: Scaling Payload:
+   CHAS     RM    TAX  PTRATIO      B  LSTAT
+0     0  6.575  296.0     15.3  396.9   4.98
+[2020-05-25 15:48:21,775] INFO in app: Log added by Rahul to show predictions: [20.35373177134412]
+127.0.0.1 - - [25/May/2020 15:48:21] "POST /predict HTTP/1.1" 200 -
